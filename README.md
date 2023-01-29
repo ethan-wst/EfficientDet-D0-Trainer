@@ -27,53 +27,53 @@
  	
 		https://github.com/protocolbuffers/protobuf/releases
 		
-- Extract contents into the of the `tar.gz` file into a directory `<PATH_TO_PB>` of your choice
+ - Extract contents into the of the `tar.gz` file into a directory `<PATH_TO_PB>` of your choice
 
-- Add `<PATH_TO_PB>\bin` to your `PATH`
+ - Add `<PATH_TO_PB>\bin` to your `PATH`
 
-  - Open `~/ .bashrc` file in a text editor
+   - Open `~/ .bashrc` file in a text editor
 	
 	
-  - Insert export syntax to the end of the file 
+   - Insert export syntax to the end of the file 
 	
-		export PATH="<PATH_TO_PB>/bin:$PATH"
+		 export PATH="<PATH_TO_PB>/bin:$PATH"
 		
-  - Restart the terminal, `cd` into `models/research/` and run
+   - Restart the terminal, `cd` into `models/research/` and run
 	
-		protoc object_detection/protos/*.proto --python_out=.
-		
-### COCO API Installation
+		 protoc object_detection/protos/*.proto --python_out=.
+		 
+ ### COCO API Installation
 
-Although `pycocotools` should get installed along with the Object Detection API, this install can fail for various reasons and is simpler to install before hand
+ Although `pycocotools` should get installed along with the Object Detection API, this install can fail for various reasons and is simpler to install before hand
 
-- Download COCOAPI into a directory of your choice
+ - Download COCOAPI into a directory of your choice
 
-		git clone https://github.com/cocodataset/cocoapi.git
-	
-- Make the `pycocotools` directory
+	 	git clone https://github.com/cocodataset/cocoapi.git
+	 
+ - Make the `pycocotools` directory
 	
 		cd cocoapi/PythonAPI
 		make
 		
-- Copy the `pycocotools` directory into the `models/reseach/` directory
+ - Copy the `pycocotools` directory into the `models/reseach/` directory
 		
 		cp -r pycocotools <PATH_TO_MODELS>/models/research/
 
-### Install Object Detection API
+ ### Install Object Detection API
 
-- From within `<PATH_TO_MODELS>/models/research/` run
+ - From within `<PATH_TO_MODELS>/models/research/` run
 
 		cp object_detection/packages/tf2/setup.py .
 		python -m pip install --use-feature=2020-resolver .
 		
-### Test Installation
+ ### Test Installation
 
-- From within `<PATH_TO_MODELS>/models/research/` run
+ - From within `<PATH_TO_MODELS>/models/research/` run
 
 		python object_detection/builders/model_builder_tf2_test.py
 		
-- Once the program is finished you should observe a print-out similiar to
-&ensp;&thinsp; <Details>
+ - Once the program is finished you should observe a print-out similiar to
+ &ensp;&thinsp; <Details>
 	```
 	[       OK ] ModelBuilderTF2Test.test_create_ssd_models_from_config
 	[ RUN      ] ModelBuilderTF2Test.test_invalid_faster_rcnn_batchnorm_update
@@ -111,4 +111,6 @@ Although `pycocotools` should get installed along with the Object Detection API,
 	
 	OK (skipped=1)
 	```
-</Details>
+ </Details>
+
+## 

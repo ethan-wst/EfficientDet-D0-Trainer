@@ -20,25 +20,6 @@
 	`tf.Tensor(-54.834015, shape=(), dtype=float32)`
  
 ## Install TensorFlow Object Detection API 
-
-### Download TensorFlow Model Garden
-
-- `cd` into the `models/` directory
-
-- Clone the model repository
-
-		git clone https://github.com/tensorflow/models.git
-			 
-- The `models/` directory should now look like
-
-	```
-	models/
-	 |- community/
-	 |- official/
-	 |- orbit/
-	 |- research/
-	 |_ ...
-	```
 	
  ### Protobuf Installation
  

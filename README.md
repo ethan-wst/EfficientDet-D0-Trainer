@@ -8,14 +8,13 @@
 
   - Install TensorFlow package
 
-
 		pip install --ignore-installed --upgrade tensorflow==2.5.0
 		
   - Verify installation
 	
 		python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
 		
-- The above code should return a print-out ending with (the first number will vary):
+  - The above code should return a print-out ending with (the first number will vary):
  
 	`tf.Tensor(-54.834015, shape=(), dtype=float32)`
  
@@ -113,4 +112,40 @@
 	```
  </Details>
 
-## 
+## Preparing for Training Job
+
+ ### Create TensorFlow Records
+ 
+ - Install `pandas` package
+ 
+	- Anaconda
+
+			conda install pandas
+	- Pip
+	
+			pip install pandas
+ 
+ - Using the `generate_tfrecord.py` in `preprocessing/` run
+ 
+ 		# Creates train data:
+ 		python generate_tfrecord.py -x [PATH_TO_IMAGES_FOLDER]/train -l [PATH_TO_ANNOTATIONS_FOLDER]/label_map.pbtxt -o [PATH_TO_ANNOTATIONS_FOLDER]/train.record
+		
+		#Creates test data:
+		python generate_tfrecord.py -x [PATH_TO_IMAGES_FOLDER]/test -l [PATH_TO_ANNOTATIONS_FOLDER]/label_map.pbtxt -o [PATH_TO_ANNOTATIONS_FOLDER]/test.record
+
+  - There should now be a `test.record` and `train.record` in  `trainer/annotaions/`
+
+## Training Model
+
+### Begin Training
+This is to start the training job, a training job may take several hours depending on the number of images to train on
+
+-`cd` into the `trainer/` directory and run 
+
+	python model_main_tf2.py --model_dir=models/my_ssd_effdet_d0 --pipeline_config_path=models/my_ssd_effdet_d0/pipeline.config
+		
+
+
+
+
+ 

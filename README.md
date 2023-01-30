@@ -140,10 +140,31 @@
 ### Begin Training
 This is to start the training job, a training job may take several hours depending on the number of images to train on
 
--`cd` into the `trainer/` directory and run 
+- `cd` into the `trainer/` directory and run 
 
-	python model_main_tf2.py --model_dir=models/my_ssd_effdet_d0 --pipeline_config_path=models/my_ssd_effdet_d0/pipeline.config
+		python model_main_tf2.py --model_dir=models/my_ssd_effdet_d0 --pipeline_config_path=models/my_ssd_effdet_d0/pipeline.config
 		
+### Monitor Training
+
+This is only if you would like to use TensorBoard to moniter training progress (not required)
+
+- Open a seperate command terminal from the terminal training the model
+
+- Activate Anaconda virtual enviroment (if you are using one to train the model)
+
+- `cd` into the `trainer/` directory
+
+- Then run 
+
+		tensorboard --logdir=models/my_ssd_effdet_d0
+
+- This command should return a print out with a URL on the last line, the URL should be the same as below but can differ
+
+		http://localhost:6006/
+		
+## Export Trained Model
+
+The training software can be automatically stopped by adjusting the **Need to FInish Pipeline stuff**
 
 
 

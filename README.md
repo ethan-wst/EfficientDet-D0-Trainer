@@ -1,8 +1,4 @@
 # EfficientDet-D0-Trainer
-
-This installation is recomended to completed within an Anaconda virtual enviroment for Python 3.9
-
-	https://www.anaconda.com/products/individual
 	
 ## Install TensorFlow PIP package
 

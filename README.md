@@ -412,8 +412,18 @@ The training job can be stopped by `ctrl-c` if the job needs to be stopped befor
 
 - To export the trained model `cd` into the `trainer/` directory and run
 		
-		python .\exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\models\my_ssd_effdet_d0\pipeline.config --trained_checkpoint_dir .\models\mmy_ssd_effdet_d0\ --output_directory .\exported-models\my_model
+		python .\exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\models\my_ssd_effdet_d0\pipeline.config --trained_checkpoint_dir .\models\my_ssd_effdet_d0\ --output_directory .\exported-models\my_model
+		
+- After export the `exported-models/my_model/` directory should contain
 
+		trainer/
+		|- exported-models/
+		   |- my_model/
+		      |- checkpoint/
+		      |- saved_model/
+		      |- pipeline.config
+		
+- This model can be used for inferencing
 
 
  

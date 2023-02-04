@@ -1,4 +1,4 @@
-# EfficientDet-D0-Trainer
+# efficientdet-d0-trainer
 	
 ## Install TensorFlow PIP package
 

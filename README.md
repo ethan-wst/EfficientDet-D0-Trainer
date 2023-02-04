@@ -308,8 +308,8 @@
 		use_moving_average: false
 	  }
 	  
-	  # Insert path to `EfficientDet-D0-Trainer/` directory
-	  fine_tune_checkpoint: "<PATH_TO_EFFDET_DIR>/EfficientDet-D0-Trainer/trainer/pre-trained-models/efficientdet_d0_coco17_tpu-32/checkpoint/ckpt-0.index"
+	  # Insert path to `efficientdet-d0-trainer/` directory
+	  fine_tune_checkpoint: "<PATH_TO_EFFDET_DIR>/efficientdet-d0-trainer/trainer/pre-trained-models/efficientdet_d0_coco17_tpu-32/checkpoint/ckpt-0.index"
 	  
 	  # EfficientDet Models are recommended to be trained for 20 Epochs. Num_Steps = (#_of_Images/Batch_Size)*Epochs (eg. Num_Steps = (800/8)*20)
 	  num_steps: 300000
@@ -324,12 +324,12 @@
 	}
 	train_input_reader: {
 	
-	  # Insert path to `EfficientDet-D0-Trainer/` directory
-	  label_map_path: "<PATH_TO_EFFDET_DIR>/EfficientDet-D0-Trainer/trainer/annotations/label_map.pbtxt"
+	  # Insert path to `efficientdet-d0-trainer/` directory
+	  label_map_path: "<PATH_TO_EFFDET_DIR>/efficientdet-d0-trainer/trainer/annotations/label_map.pbtxt"
 	  
 	  tf_record_input_reader {
-	    # Insert path to `EfficientDet-D0-Trainer/` directory
-		input_path: "<PATH_TO_EFFDET_DIR>/EfficientDet-D0-Trainer/trainer/annotations/train.record"
+	    # Insert path to `efficientdet-d0-trainer/` directory
+		input_path: "<PATH_TO_EFFDET_DIR>/efficientdet-d0-trainer/trainer/annotations/train.record"
 		
 	  }
 	  
@@ -350,15 +350,15 @@
 
 	eval_input_reader: {
 	
-	  # Insert path to `EfficientDet-D0-Trainer/` directory
-	  label_map_path: "<PATH_TO_EFFDET_DIR>/EfficientDet-D0-Trainer/trainer/annotations/label_map.txt"
+	  # Insert path to `efficientdet-d0-trainer/` directory
+	  label_map_path: "<PATH_TO_EFFDET_DIR>/efficientdet-d0-trainer/trainer/annotations/label_map.txt"
 	  
 	  shuffle: false
 	  num_epochs: 1
 	  tf_record_input_reader {
 	  
-	    # Insert path to `EfficientDet-D0-Trainer/` directory
-	    input_path: "<PATH_TO_EFFDET_DIR>/EfficientDet-D0-Trainer/trainer/annotations/test.record"
+	    # Insert path to `efficientdet-d0-trainer/` directory
+	    input_path: "<PATH_TO_EFFDET_DIR>/efficientdet-d0-trainer/trainer/annotations/test.record"
 		
 	  }
 	}

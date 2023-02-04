@@ -1,6 +1,6 @@
 # EfficientDet-D0-Trainer
 
-&ensp;&thinsp;This installation is recomended to completed within an Anaconda virtual enviroment for Python 3.9
+This installation is recomended to completed within an Anaconda virtual enviroment for Python 3.9
 
 	https://www.anaconda.com/products/individual
 	
@@ -378,6 +378,12 @@ This is to start the training job, a training job may take several hours dependi
 
 		python model_main_tf2.py --model_dir=models/my_ssd_effdet_d0 --pipeline_config_path=models/my_ssd_effdet_d0/pipeline.config
 		
+- Warnings will appear, and after some time an information print out as the one below should appear (this may take a handful of minutes to appear)
+
+		INFO:tensorflow:Step 100 per-step time 1.153s loss=0.761
+		I0716 05:26:55.879558  1364 model_lib_v2.py:632] Step 100 per-step time 1.153s loss=0.761
+		...
+		
 ### Monitor Training
 
 This is only if you would like to use TensorBoard to moniter training progress (not required)
@@ -396,10 +402,17 @@ This is only if you would like to use TensorBoard to moniter training progress (
 
 		http://localhost:6006/
 		
+### Warning
+
+If while training a `Loss/Total Loss` of `nan` appears the training model is ruined because the training job ran out of memory. This can be troubleshooted by lowering the batch_size and/or lowering the queue_capacity and min_after_dequeue variables in the `pipeline` file. If possible the easiest solution would be to dedicate more memory to the training job.
+		
 ## Export Trained Model
 
-The training software can be automatically stopped by adjusting the **Need to FInish Pipeline stuff**
+The training job can be stopped by `ctrl-c` if the job needs to be stopped before the set num_steps (it can take around a minute to actually stop the job)
 
+- To export the trained model `cd` into the `trainer/` directory and run
+		
+		python .\exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\models\my_ssd_effdet_d0\pipeline.config --trained_checkpoint_dir .\models\mmy_ssd_effdet_d0\ --output_directory .\exported-models\my_model
 
 
 

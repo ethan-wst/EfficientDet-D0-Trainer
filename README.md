@@ -68,7 +68,7 @@
 		python object_detection/builders/model_builder_tf2_test.py
 		
  - Once the program is finished you should observe a print-out similiar to
- &ensp;&thinsp; <Details>
+ &ensp;&thinsp;<Details>
 	```
 	[       OK ] ModelBuilderTF2Test.test_create_ssd_models_from_config
 	[ RUN      ] ModelBuilderTF2Test.test_invalid_faster_rcnn_batchnorm_update

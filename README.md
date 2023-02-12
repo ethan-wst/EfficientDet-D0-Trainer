@@ -48,6 +48,7 @@
  - Make the `pycocotools` directory
 	
 		cd cocoapi/PythonAPI
+		pip install cython
 		make
 		
  - Copy the `pycocotools` directory into the `models/reseach/` directory
@@ -59,7 +60,7 @@
  - From within `<PATH_TO_MODELS>/models/research/` run
 
 		cp object_detection/packages/tf2/setup.py .
-		python -m pip install --use-feature=2020-resolver .
+		python -m pip install .
 		
  ### Test Installation
 

@@ -30,3 +30,5 @@ echo "per-step time and loss statistics should appear, to monitor training using
 echo "github https://github.com/ethan-wst/efficientdet-d0-trainer.git and follow the instrucitons in the"
 echo "\'Monito Training\' section"
 echo -e "\n"
+
+

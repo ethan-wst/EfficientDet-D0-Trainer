@@ -8,7 +8,7 @@
 		
   - Verify installation
 	
-		python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+		python3 -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
 		
   - The above code should return a print-out ending with (the first number will vary):
  
@@ -66,7 +66,7 @@
 
  - From within `<PATH_TO_MODELS>/models/research/` run
 
-		python object_detection/builders/model_builder_tf2_test.py
+		python3 object_detection/builders/model_builder_tf2_test.py
 		
  - Once the program is finished you should observe a print-out similiar to
  &ensp;&thinsp;<Details>
@@ -125,10 +125,10 @@
  - Using the `generate_tfrecord.py` in `preprocessing/` run
  
  		# Creates train data:
- 		python generate_tfrecord.py -x [PATH_TO_IMAGES_FOLDER]/train -l [PATH_TO_ANNOTATIONS_FOLDER]/label_map.pbtxt -o [PATH_TO_ANNOTATIONS_FOLDER]/train.record
+ 		python3 generate_tfrecord.py -x [PATH_TO_IMAGES_FOLDER]/train -l [PATH_TO_ANNOTATIONS_FOLDER]/label_map.pbtxt -o [PATH_TO_ANNOTATIONS_FOLDER]/train.record
 		
 		#Creates test data:
-		python generate_tfrecord.py -x [PATH_TO_IMAGES_FOLDER]/test -l [PATH_TO_ANNOTATIONS_FOLDER]/label_map.pbtxt -o [PATH_TO_ANNOTATIONS_FOLDER]/test.record
+		python3 generate_tfrecord.py -x [PATH_TO_IMAGES_FOLDER]/test -l [PATH_TO_ANNOTATIONS_FOLDER]/label_map.pbtxt -o [PATH_TO_ANNOTATIONS_FOLDER]/test.record
 
   - There should now be a `test.record` and `train.record` in  `trainer/annotaions/`
 
@@ -373,7 +373,7 @@ This is to start the training job, a training job may take several hours dependi
 
 - `cd` into the `trainer/` directory and run 
 
-		python model_main_tf2.py --model_dir=models/my_ssd_effdet_d0 --pipeline_config_path=models/my_ssd_effdet_d0/pipeline.config
+		python3 model_main_tf2.py --model_dir=models/my_ssd_effdet_d0 --pipeline_config_path=models/my_ssd_effdet_d0/pipeline.config
 		
 - Warnings will appear, and after some time an information print out as the one below should appear (this may take a handful of minutes to appear)
 
@@ -409,7 +409,7 @@ The training job can be stopped by `ctrl-c` if the job needs to be stopped befor
 
 - To export the trained model `cd` into the `trainer/` directory and run
 		
-		python .\exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\models\my_ssd_effdet_d0\pipeline.config --trained_checkpoint_dir .\models\my_ssd_effdet_d0\ --output_directory .\exported-models\my_model
+		python3 .\exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\models\my_ssd_effdet_d0\pipeline.config --trained_checkpoint_dir .\models\my_ssd_effdet_d0\ --output_directory .\exported-models\my_model
 		
 - After export the `exported-models/my_model/` directory should contain
 

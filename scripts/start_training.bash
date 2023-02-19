@@ -5,7 +5,7 @@ IMAGE_DIR="${PROJECT_ROOT}/src/${EFFDET_SRC}/trainer/images"
 ANNO_DIR="PROJECT_ROOT}/src/${EFFDET_SRC}/trainer/annotations"
 
 # Creates .record files
-cd "${EFFDET_SRC}/preprocessing && \ 
+cd "${EFFDET_SRC}/preprocessing" && \ 
   python3 generate_tfrecord.py -x ${IMAGE_DIR}/train -l ${annoDir}/label_map.pbtxt -o ${IMAGE_DIR}/train.record && \
   python3 generate_tfrecord.py -x ${IMAGE_DIR}/test -l ${annoDir}/label_map.pbtxt -o ${IMAGE_DIR}/test.record
   

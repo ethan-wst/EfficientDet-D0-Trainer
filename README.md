@@ -1,6 +1,6 @@
 # EfficientDet-D0-Trainer
-	
-## Install TensorFlow PIP package
+## Manual Instalation	
+ ### Install TensorFlow PIP package
 
   - Install TensorFlow package
 
@@ -14,9 +14,9 @@
  
 	`tf.Tensor(-54.834015, shape=(), dtype=float32)`
  
-## Install TensorFlow Object Detection API 
+### Install TensorFlow Object Detection API 
 	
- ### Protobuf Installation
+ #### Protobuf Installation
  
  - Download the latest realease from (e.g. protoc-all-#.##.#.tar.gz)
  	
@@ -37,7 +37,7 @@
 	
 		 protoc object_detection/protos/*.proto --python_out=.
 		 
- ### COCO API Installation
+ #### COCO API Installation
 
  Although `pycocotools` should get installed along with the Object Detection API, this install can fail for various reasons and is simpler to install before hand
 
@@ -55,14 +55,14 @@
 		
 		cp -r pycocotools <PATH_TO_MODELS>/models/research/
 
- ### Install Object Detection API
+ #### Install Object Detection API
 
  - From within `<PATH_TO_MODELS>/models/research/` run
 
 		cp object_detection/packages/tf2/setup.py .
 		python -m pip install .
 		
- ### Test Installation
+ #### Test Installation
 
  - From within `<PATH_TO_MODELS>/models/research/` run
 
@@ -109,9 +109,9 @@
 	```
  </Details>
 
-## Preparing for Training Job
+### Preparing for Training Job
 
- ### Create TensorFlow Records
+ #### Create TensorFlow Records
  
  - Install `pandas` package
  
@@ -132,7 +132,7 @@
 
   - There should now be a `test.record` and `train.record` in  `trainer/annotaions/`
 
-### Adjusting Training Job
+#### Adjusting Training Job
 
   - `cd` into the `trainer/models/my_ssd_effdet_do/`
   - Open the `pipeline.config` file in a text editor
@@ -366,9 +366,9 @@
 	```
 </Details>
 
-## Training Model
+### Training Model
 
-### Begin Training
+#### Begin Training
 This is to start the training job, a training job may take several hours depending on the number of images to train on
 
 - `cd` into the `trainer/` directory and run 
@@ -381,7 +381,7 @@ This is to start the training job, a training job may take several hours dependi
 		I0716 05:26:55.879558  1364 model_lib_v2.py:632] Step 100 per-step time 1.153s loss=0.761
 		...
 		
-### Monitor Training
+#### Monitor Training
 
 This is only if you would like to use TensorBoard to moniter training progress (not required)
 
@@ -399,11 +399,11 @@ This is only if you would like to use TensorBoard to moniter training progress (
 
 		http://localhost:6006/
 		
-### Warning
+#### Warning
 
 If while training a `Loss/Total Loss` of `nan` appears the training model is ruined because the training job ran out of memory. This can be troubleshooted by lowering the batch_size and/or lowering the queue_capacity and min_after_dequeue variables in the `pipeline` file. If possible the easiest solution would be to dedicate more memory to the training job.
 		
-## Export Trained Model
+### Export Trained Model
 
 The training job can be stopped by `ctrl-c` if the job needs to be stopped before the set num_steps (it can take around a minute to actually stop the job)
 

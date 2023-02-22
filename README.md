@@ -1,5 +1,10 @@
 # EfficientDet-D0-Trainer
 ## Installation and Training Through Buff-Code
+
+- Ensure buffpy is added to your enviroment, from within the `buff-code/` directory run
+	
+		source buffpy/buff.bash
+		
  ### Clone Repository and Install Dependencies
  
  - `cd` into `<PATH_TO_BUFFCODE>/buffpy/scripts` and run
@@ -319,10 +324,6 @@
 #### Begin Training
 	
 This is to start the training job, a training job may take several hours depending on the number of images to train on
-	
-- Ensure buffpy is added to your enviroment, from within the `buff-code/` directory run
-	
-		source buffpy/buff.bash
 	
 - `cd` into the `buff-code/` directory and run
 	

@@ -364,7 +364,7 @@ The training job can be stopped by `ctrl-c` if the job needs to be stopped befor
 
 - To export the trained model `cd` into the `trainer/` directory and run
 		
-		python3 .\exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\models\my_ssd_effdet_d0\pipeline.config --trained_checkpoint_dir .\models\my_ssd_effdet_d0\ --output_directory .\exported-models\my_model
+		python3 exporter_main_v2.py --input_type image_tensor --pipeline_config_path models\my_ssd_effdet_d0\pipeline.config --trained_checkpoint_dir models\my_ssd_effdet_d0\ --output_directory exported-models\my_model
 		
 - After export the `exported-models/my_model/` directory should contain
 
@@ -789,7 +789,7 @@ The training job can be stopped by `ctrl-c` if the job needs to be stopped befor
 
 - To export the trained model `cd` into the `trainer/` directory and run
 		
-		python3 .\exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\models\my_ssd_effdet_d0\pipeline.config --trained_checkpoint_dir .\models\my_ssd_effdet_d0\ --output_directory .\exported-models\my_model
+		python3 exporter_main_v2.py --input_type image_tensor --pipeline_config_path models\my_ssd_effdet_d0\pipeline.config --trained_checkpoint_dir models\my_ssd_effdet_d0\ --output_directory exported-models\my_model
 		
 - After export the `exported-models/my_model/` directory should contain
 
